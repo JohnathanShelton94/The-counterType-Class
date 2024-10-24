@@ -3,35 +3,35 @@
 
 #include "counterType.h"
 #include <iostream>
+using namespace std;
 
 int main() {
             // Test with default constructor
     counterType counter1;
-    std::cout << "Initial value (default constructor): " << counter1.getCounter() << std::endl;
+    cout << "Initial value (default constructor): " << counter1.getCounter() << endl;
 
-            // Test with user-specified constructor
-    counterType counter2(5);
-    std::cout << "Initial value (user-specified constructor): " << counter2.getCounter() << std::endl;
+            // Test the user-defined constructor with input from the user
+    counterType counter2(true);  // Pass `true` to ask the user for input
+    cout << "Value after user input: " << counter2.getCounter() << endl;
 
-            // Test increment
+            // Test increment and decrement
     counter2.increment();
-    std::cout << "After increment: " << counter2.getCounter() << std::endl;
+    cout << "After increment: " << counter2.getCounter() << endl;
 
-            // Test decrement
     counter2.decrement();
-    std::cout << "After decrement: " << counter2.getCounter() << std::endl;
+    cout << "After decrement: " << counter2.getCounter() << endl;
 
             // Test reset
     counter2.initializeCounter();
-    std::cout << "After reset: " << counter2.getCounter() << std::endl;
+    cout << "After reset: " << counter2.getCounter() << std::endl;
 
             // Test decrement after reset
     counter2.decrement();
-    std::cout << "Attempting to decrement after reset: " << counter2.getCounter() << std::endl;
+    cout << "Attempting to decrement after reset: " << counter2.getCounter() << std::endl;
 
             // Set counter to 10
     counter2.setCounter(10);
-    std::cout << "After setting to 10: " << counter2.getCounter() << std::endl;
+    cout << "After setting to 10: " << counter2.getCounter() << std::endl;
 
     return 0;
 }

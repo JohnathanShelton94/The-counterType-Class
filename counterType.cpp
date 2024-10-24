@@ -3,6 +3,7 @@
 
 #include "counterType.h"
 #include <iostream>
+using namespace std;
 
         // Constructor to initialize counter to 0
 counterType::counterType() {
@@ -10,13 +11,18 @@ counterType::counterType() {
 }
 
         // Constructor to initialize counter to user-specified value
-counterType::counterType(int value) {
-    if (value >= 0) {
-        counter = value;
-    }
-    else {
-        std::cout << "Error: Counter cannot be negative." << std::endl;
-        counter = 0;
+counterType::counterType(bool askForValue) {
+    if (askForValue) {
+        int userValue;
+        cout << "Enter a nonnegative value for the counter: ";
+        cin >> userValue;
+
+        // Ensure the value is nonnegative
+        while (userValue < 0) {
+            cout << "Value cannot be negative. Please enter a nonnegative value: ";
+            cin >> userValue;
+        }
+        counter = userValue;
     }
 }
 

@@ -16,7 +16,7 @@ public:
     counterType();
 
             // Constructor to initialize the counter to a user-specified value
-    counterType(int value);
+    counterType(bool askForValue);
 
             // Function to set the counter
     void setCounter(int value);
